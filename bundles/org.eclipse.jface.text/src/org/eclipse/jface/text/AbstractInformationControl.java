@@ -433,7 +433,25 @@ public abstract class AbstractInformationControl implements IInformationControl,
 	 * @since 3.13
 	 */
 	public final Shell getShell() {
-		return fShell;
+		return fContentComposite.getShell();
+	}
+	
+	/**
+	* The composite containing the content created by subclasses.
+	*
+	* @return the content composite
+	*/
+	protected final Composite getContentComposite() {
+		return fContentComposite;
+	}
+
+	/**
+ 	* Composite containing the status line content.
+	*
+	* @return the status composite or <code>null</code> if none
+	*/
+	protected final Composite getStatusComposite() {
+		return fStatusComposite;
 	}
 
 	/**
